@@ -1,28 +1,11 @@
 import { useState } from 'react';
-import type { FormEvent } from 'react';
 import { FormInput, FormTextarea, FormSelect } from '../ui/FormInput';
 import { Button } from '../ui/Button';
 import { validateEmail, validatePhone, validateRequired, validateMinLength } from '../../utils/validations';
 import { services } from '../../data/services';
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  service: string;
-  message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  phone?: string;
-  service?: string;
-  message?: string;
-}
-
 export const ContactForm = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -30,11 +13,11 @@ export const ContactForm = () => {
     message: ''
   });
 
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleChange = (field: keyof FormData, value: string) => {
+  const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
@@ -42,8 +25,8 @@ export const ContactForm = () => {
     }
   };
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
+  const validateForm = () => {
+    const newErrors = {};
 
     if (!validateRequired(formData.name)) {
       newErrors.name = 'Name is required';
@@ -77,7 +60,7 @@ export const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!validateForm()) {

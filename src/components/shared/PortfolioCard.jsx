@@ -1,13 +1,8 @@
 import { Card } from '../ui/Card';
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/Button';
-import type { CaseStudy } from '../../data/portfolio';
 
-interface PortfolioCardProps {
-  caseStudy: CaseStudy;
-}
-
-export const PortfolioCard = ({ caseStudy }: PortfolioCardProps) => {
+export const PortfolioCard = ({ caseStudy }) => {
   return (
     <Card>
       <img 

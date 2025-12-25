@@ -1,23 +1,23 @@
-export const validateEmail = (email: string): boolean => {
+export const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-export const validatePhone = (phone: string): boolean => {
+export const validatePhone = (phone) => {
   // Accepts various phone formats: (123) 456-7890, 123-456-7890, 1234567890, +1 123 456 7890
   const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
   return phoneRegex.test(phone.replace(/\s/g, ''));
 };
 
-export const validateRequired = (value: string): boolean => {
+export const validateRequired = (value) => {
   return value.trim().length > 0;
 };
 
-export const validateMinLength = (value: string, minLength: number): boolean => {
+export const validateMinLength = (value, minLength) => {
   return value.trim().length >= minLength;
 };
 
-export const getErrorMessage = (field: string, _value: string, type: string): string => {
+export const getErrorMessage = (field, _value, type) => {
   switch (type) {
     case 'required':
       return `${field} is required`;

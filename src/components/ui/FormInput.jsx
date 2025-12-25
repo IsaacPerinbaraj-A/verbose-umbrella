@@ -1,17 +1,3 @@
-import type { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
-
-interface BaseInputProps {
-  label: string;
-  error?: string;
-  required?: boolean;
-}
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>, BaseInputProps {
-  type?: 'text' | 'email' | 'tel' | 'number';
-}
-
-interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement>, BaseInputProps {}
-
 export const FormInput = ({ 
   label, 
   error, 
@@ -19,7 +5,7 @@ export const FormInput = ({
   className = '',
   id,
   ...props 
-}: InputProps) => {
+}) => {
   const inputId = id || `input-${label.toLowerCase().replace(/\s/g, '-')}`;
   
   return (
@@ -62,7 +48,7 @@ export const FormTextarea = ({
   className = '',
   id,
   ...props 
-}: TextareaProps) => {
+}) => {
   const textareaId = id || `textarea-${label.toLowerCase().replace(/\s/g, '-')}`;
   
   return (
@@ -108,7 +94,7 @@ export const FormSelect = ({
   className = '',
   id,
   ...props 
-}: BaseInputProps & { children: React.ReactNode } & React.SelectHTMLAttributes<HTMLSelectElement>) => {
+}) => {
   const selectId = id || `select-${label.toLowerCase().replace(/\s/g, '-')}`;
   
   return (

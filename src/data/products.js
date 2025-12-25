@@ -1,15 +1,4 @@
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  features: string[];
-  techStack: string[];
-  useCases: string[];
-  category: string;
-}
-
-export const products: Product[] = [
+export const products = [
   {
     id: 'crm',
     name: 'Enterprise CRM',

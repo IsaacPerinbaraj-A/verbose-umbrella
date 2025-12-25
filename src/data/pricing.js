@@ -1,23 +1,4 @@
-export interface PricingFeature {
-  name: string;
-  starter: boolean | string;
-  professional: boolean | string;
-  enterprise: boolean | string;
-}
-
-export interface PricingPlan {
-  id: string;
-  name: string;
-  description: string;
-  price: string;
-  period: string;
-  popular?: boolean;
-  features: string[];
-  cta: string;
-  ctaLink: string;
-}
-
-export const pricingPlans: PricingPlan[] = [
+export const pricingPlans = [
   {
     id: 'starter',
     name: 'Starter',
@@ -85,7 +66,7 @@ export const pricingPlans: PricingPlan[] = [
   }
 ];
 
-export const pricingFeatures: PricingFeature[] = [
+export const pricingFeatures = [
   {
     name: 'Team Members',
     starter: 'Up to 5',

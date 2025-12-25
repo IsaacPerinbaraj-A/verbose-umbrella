@@ -1,13 +1,8 @@
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
-import type { PricingPlan } from '../../data/pricing';
 import { FiCheck } from 'react-icons/fi';
 
-interface PricingCardProps {
-  plan: PricingPlan;
-}
-
-export const PricingCard = ({ plan }: PricingCardProps) => {
+export const PricingCard = ({ plan }) => {
   return (
     <Card className={`relative ${plan.popular ? 'ring-2 ring-primary-500 scale-105' : ''}`}>
       {plan.popular && (

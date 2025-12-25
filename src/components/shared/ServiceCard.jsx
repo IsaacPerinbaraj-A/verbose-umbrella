@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../ui/Card';
-import type { Service } from '../../data/services';
 
-interface ServiceCardProps {
-  service: Service;
-}
-
-export const ServiceCard = ({ service }: ServiceCardProps) => {
+export const ServiceCard = ({ service }) => {
   return (
     <Card>
       <div className="text-4xl mb-4">{service.icon}</div>

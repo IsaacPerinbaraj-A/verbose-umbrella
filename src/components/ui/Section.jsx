@@ -1,13 +1,5 @@
-import type { HTMLAttributes, ReactNode } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-
-interface SectionProps extends HTMLAttributes<HTMLElement> {
-  children: ReactNode;
-  title?: string;
-  subtitle?: string;
-  className?: string;
-}
 
 export const Section = ({ 
   children, 
@@ -15,7 +7,7 @@ export const Section = ({
   subtitle, 
   className = '',
   ...props 
-}: SectionProps) => {
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 

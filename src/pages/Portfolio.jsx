@@ -12,7 +12,7 @@ const categories = ['All', ...Array.from(new Set(caseStudies.map(cs => cs.catego
 export const Portfolio = () => {
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState<string | null>(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
 
   useEffect(() => {
     if (location.hash) {

@@ -1,14 +1,4 @@
-export interface Service {
-  id: string;
-  title: string;
-  shortDescription: string;
-  fullDescription: string;
-  icon: string;
-  process: string[];
-  tools: string[];
-}
-
-export const services: Service[] = [
+export const services = [
   {
     id: 'web-development',
     title: 'Web Development',

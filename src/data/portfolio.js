@@ -1,20 +1,4 @@
-export interface CaseStudy {
-  id: string;
-  title: string;
-  client: string;
-  category: string;
-  image: string;
-  problem: string;
-  solution: string;
-  results: {
-    metric: string;
-    value: string;
-  }[];
-  technologies: string[];
-  duration: string;
-}
-
-export const caseStudies: CaseStudy[] = [
+export const caseStudies = [
   {
     id: 'ecommerce-platform',
     title: 'E-commerce Platform Modernization',

@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
-import type { Product } from '../../data/products';
 
-interface ProductCardProps {
-  product: Product;
-}
-
-export const ProductCard = ({ product }: ProductCardProps) => {
+export const ProductCard = ({ product }) => {
   return (
     <Card className="overflow-hidden">
       <img 
