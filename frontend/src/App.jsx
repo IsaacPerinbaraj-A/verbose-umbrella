@@ -9,6 +9,7 @@ import { Products } from './pages/Products';
 import { Pricing } from './pages/Pricing';
 import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
+import { Admin } from './pages/Admin';
 
 function App() {
   return (
@@ -20,11 +21,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<About />} />
+            <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App;
+

@@ -29,7 +29,8 @@ export const Header = () => {
     },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact' },
+    { name: 'Admin', path: '/admin' }
   ];
 
   return (

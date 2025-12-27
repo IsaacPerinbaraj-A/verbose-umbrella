@@ -3,6 +3,7 @@ import { FormInput, FormTextarea, FormSelect } from '../ui/FormInput';
 import { Button } from '../ui/Button';
 import { validateEmail, validatePhone, validateRequired, validateMinLength } from '../../utils/validations';
 import { services } from '../../data/services';
+import { submitContactForm } from '../../utils/api';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -69,8 +70,9 @@ export const ContactForm = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await submitContactForm(formData);
+      
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({
@@ -83,7 +85,12 @@ export const ContactForm = () => {
       
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1000);
+    } catch (error) {
+      setIsSubmitting(false);
+      setErrors({
+        submit: error.message || 'Failed to send message. Please try again later.'
+      });
+    }
   };
 
   if (submitSuccess) {
@@ -152,6 +159,12 @@ export const ContactForm = () => {
         required
         placeholder="Tell us about your project or requirements..."
       />
+
+      {errors.submit && (
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+          <p className="text-sm text-red-600 dark:text-red-400">{errors.submit}</p>
+        </div>
+      )}
 
       <Button 
         type="submit" 
