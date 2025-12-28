@@ -27,9 +27,12 @@ Thumbs.db
 dist/
 build/
 
+<<<<<<< HEAD
 # Data storage
 data/
 *.json
 !package.json
 !package-lock.json
 
+=======
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb

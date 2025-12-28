@@ -78,16 +78,23 @@ cd ../backend && npm install
 
 ### Development
 
+<<<<<<< HEAD
 **Run both frontend and backend together (Recommended):**
+=======
+**Run both frontend and backend together:**
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
 ```bash
 npm run dev
 ```
 
+<<<<<<< HEAD
 This will start:
 - Backend server on `http://localhost:5000`
 - Frontend dev server on `http://localhost:5173`
 - Frontend will proxy API requests to the backend automatically
 
+=======
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
 **Run separately:**
 
 Frontend (runs on http://localhost:5173):
@@ -139,11 +146,14 @@ cd backend && npm start
 ### Health Check
 - `GET /api/health` - Check server health status
 
+<<<<<<< HEAD
 ### Contact
 - `POST /api/contact` - Submit contact form
   - Body: `{ name, email, phone, service, message }`
   - Returns: Success message and submitted data
 
+=======
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
 ### Base
 - `GET /` - API information
 

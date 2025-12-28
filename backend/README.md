@@ -38,6 +38,7 @@ The server will run on `http://localhost:5000` by default.
 ### Health Check
 - `GET /api/health` - Check server health status
 
+<<<<<<< HEAD
 ### Contact Form
 - `POST /api/contact` - Submit contact form
   - Body: `{ name, email, phone, service, message }`
@@ -61,6 +62,11 @@ Contact form submissions are stored in:
 
 **Note**: The `data/` directory is gitignored to keep submissions private.
 
+=======
+### Base
+- `GET /` - API information
+
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
 ## Project Structure
 
 ```

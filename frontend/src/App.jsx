@@ -9,7 +9,10 @@ import { Products } from './pages/Products';
 import { Pricing } from './pages/Pricing';
 import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
+<<<<<<< HEAD
 import { Admin } from './pages/Admin';
+=======
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
 
 function App() {
   return (
@@ -26,7 +29,10 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+<<<<<<< HEAD
             <Route path="/admin" element={<Admin />} />
+=======
+>>>>>>> a7fd5830ef05bd3734ca279a3fe96ff674fda5cb
           </Routes>
         </main>
         <Footer />
